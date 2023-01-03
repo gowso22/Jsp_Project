@@ -7,12 +7,14 @@
 <link rel="stylesheet" href="./resource/css/bootstrap.min.css" />
 </head>
 <body>
-<%@ include file = "Header.jsp" %>
+
+	<%@ include file = "Header.jsp" %>
 
 
 
 
 
-<%@ include file = "Footer.jsp" %>
+	<%@ include file = "Footer.jsp" %>
+
 </body>
 </html>

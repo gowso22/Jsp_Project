@@ -4,23 +4,29 @@
 /* 구글폰트 */
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
+/*body*/
+body{
+
+}
 
 /* 헤더 영역 css */
-header {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-			border: 5px black solid;
-            padding: 5px;
+.header {
+			border: 5px blue solid;
+          
             width  : 100%;
             position : fixed !important ;
+            
+      
         }     
-header nav a{
+.header nav a{
 	color : black;
 	text-decoration:none !important;
 }
 
 /* 푸터 영역 css */
 
-footer {
+.footer {
+			border : 1px white solid;
 			color : white;
 			background-color: black;
             padding: 5px;
@@ -29,7 +35,7 @@ footer {
             grid-template-columns: 1fr 1fr 1fr !important ; 
         }     
 .ft_1{
-	 margin:auto !important;
+	margin:auto !important;
 	text-align : center;
 	font-size: 25px;
 	font-family: 'Pacifico', cursive;
@@ -55,12 +61,55 @@ footer {
 	 margin-right: 50px;
 	 padding : 10px;
 	}
+	
+/*LOGIN 영역*/
+.login_sec{
+	
+	padding : 20%;
+	
+	border: 5px pink solid;
+}
+.log_info{
+	
+	width : 550px;
+}
+.log_form{
+	margin : 0px auto;
+	max-width : 300px;	
+	min-width : 200px;	
+}
 
+.mem_search{
+		
+	text-align : center;
+	color : black;
+	text-decoration:none !important;
+	
+}
+/*JOIN 영역*/
+.join_sec{
+	padding : 10%;
+}
 
+.join_info{
+	text-align : center;
+	font-size: 35px;
+	font-family: 'Pacifico', cursive;
 
-
-
-
+}
+.join_form{
+	margin : 0px auto;
+	max-width : 300px;	
+	min-width : 200px;	
+}
+.form-group span{
+	
+	 font-weight: bold;
+	
+}
+.form-group .btn-success{
+	font-size: 10px;
+}
 
         
         
