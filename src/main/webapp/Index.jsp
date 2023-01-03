@@ -9,10 +9,7 @@
 <body>
 <%@ include file = "Header.jsp" %>
 
-<div style = "height : 5000px">
 
-
-</div>
 
 
 
