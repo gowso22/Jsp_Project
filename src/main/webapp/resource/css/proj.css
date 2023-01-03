@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+
+header {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            
+            height: 100%;
+			border: 1px black solid;
+			 
+            display: grid;
+            grid-template-columns: 1fr 0.2fr;
+            
+            padding: 5px;
+        }
