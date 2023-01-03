@@ -4,11 +4,15 @@
 <html>
 <head>
 <link rel="stylesheet" href="./resource/css/proj.css" />
+<link rel="stylesheet" href="./resource/css/bootstrap.min.css" />
 </head>
 <body>
 <%@ include file = "Header.jsp" %>
 
+<div style = "height : 5000px">
 
+
+</div>
 
 
 

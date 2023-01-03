@@ -1,14 +1,26 @@
 @charset "UTF-8";
 
-
+/* 헤더 영역 css */
 header {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            
-            height: 100%;
-			border: 1px black solid;
-			 
-            display: grid;
-            grid-template-columns: 1fr 0.2fr;
-            
+			border: 5px black solid;
             padding: 5px;
-        }
+            width  : 100%;
+            position : fixed !important ;
+        }     
+header nav a{
+	color : black;
+	text-decoration:none !important;
+}
+
+/* 푸터 영역 css */
+
+footer {
+			color : white;
+			background-color: black;
+            padding: 5px;
+            
+            display: grid !important ;
+            grid-template-columns: 1fr 1fr 1fr !important ;
+            
+        }     
