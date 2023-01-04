@@ -40,28 +40,32 @@ public class MemberController extends HttpServlet {
 		}
 
 	}
-	
-	//회원정보 수정시
+
+	// 회원정보 수정시
 	private void requestUpdateMember(HttpServletRequest request) {
-		
-		MemberDAO dao = MemberDAO.getInstance();
-		MemberDTO member = new MemberDTO();
+		try {
 
-		member.setId(request.getParameter("id"));
-		member.setPwd(request.getParameter("pwd"));
-		member.setName(request.getParameter("name"));
-		member.setGender(request.getParameter("gender"));
+			MemberDAO dao = MemberDAO.getInstance();
+			MemberDTO member = new MemberDTO();
 
-		member.setEmail1(request.getParameter("email1"));
-		member.setEmail2(request.getParameter("email2"));
+			member.setId(request.getParameter("id"));
+			member.setPwd(request.getParameter("pwd"));
+			member.setName(request.getParameter("name"));
+			member.setGender(request.getParameter("gender"));
 
-		member.setPhone(request.getParameter("phone"));
+			member.setEmail1(request.getParameter("email1"));
+			member.setEmail2(request.getParameter("email2"));
 
-		dao.update(member);
-		
-		
+			member.setPhone(request.getParameter("phone"));
+
+			dao.update(member);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 	}
-	
+
 	// 회원가입 시
 	public void requestJoinMember(HttpServletRequest request) {
 
