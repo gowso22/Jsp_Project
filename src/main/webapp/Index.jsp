@@ -11,7 +11,7 @@
 	<%@ include file = "Header.jsp" %>
 
 
-
+	<div style = "padding : 30%"></div>
 
 
 	<%@ include file = "Footer.jsp" %>

@@ -12,7 +12,7 @@ body{
 /* 헤더 영역 css */
 .header {
 			border: 5px blue solid;
-          
+          	background-color:transparent !important;
             width  : 100%;
             position : fixed !important ;
             
