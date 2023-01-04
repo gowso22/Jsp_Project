@@ -33,10 +33,36 @@ public class MemberController extends HttpServlet {
 			requestJoinMember(request);
 			RequestDispatcher rd = request.getRequestDispatcher("./Login.jsp");
 			rd.forward(request, response);
+		} else if (command.equals("/MemberUpdateAction.do")) {
+			requestUpdateMember(request);
+			RequestDispatcher rd = request.getRequestDispatcher("./Index.jsp");
+			rd.forward(request, response);
 		}
 
 	}
+	
+	//회원정보 수정시
+	private void requestUpdateMember(HttpServletRequest request) {
+		
+		MemberDAO dao = MemberDAO.getInstance();
+		MemberDTO member = new MemberDTO();
 
+		member.setId(request.getParameter("id"));
+		member.setPwd(request.getParameter("pwd"));
+		member.setName(request.getParameter("name"));
+		member.setGender(request.getParameter("gender"));
+
+		member.setEmail1(request.getParameter("email1"));
+		member.setEmail2(request.getParameter("email2"));
+
+		member.setPhone(request.getParameter("phone"));
+
+		dao.update(member);
+		
+		
+	}
+	
+	// 회원가입 시
 	public void requestJoinMember(HttpServletRequest request) {
 
 		try {
@@ -48,12 +74,9 @@ public class MemberController extends HttpServlet {
 			member.setPwd(request.getParameter("pwd"));
 			member.setName(request.getParameter("name"));
 			member.setGender(request.getParameter("gender"));
-			
-			
+
 			member.setEmail1(request.getParameter("email1"));
 			member.setEmail2(request.getParameter("email2"));
-			
-			
 
 			member.setPhone(request.getParameter("phone"));
 

@@ -30,7 +30,7 @@
 					</c:when>
 					<c:otherwise>
 						<span style="padding-top: 7px;">[<%=sessionId%>님]</span>
-						<a href="#">회원정보수정</a> || <a href="logout.jsp">로그아웃</a>
+						<a href="UpdateMember.jsp">회원정보수정</a> || <a href="logout.jsp">로그아웃</a>
 					</c:otherwise>
 				</c:choose>
 				

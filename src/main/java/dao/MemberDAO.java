@@ -19,7 +19,7 @@ public class MemberDAO {
 		return instance;
 	}	
 	
-	
+
 	
 	// 회원 중복 확인 메서드
 	public int idChecked(String id, String pwd) {
@@ -70,7 +70,7 @@ public class MemberDAO {
 	
 
 	// 로그인 메서드
-		public int login(String id, String pwd) {
+	public int login(String id, String pwd) {
 
 			String sql = "select pwd from member where id = ?";
 
@@ -119,8 +119,7 @@ public class MemberDAO {
 		}
 
 		// 회원가입 메서드
-		public void
-		join(MemberDTO member) {
+		public void join(MemberDTO member) {
 
 			Connection conn = null;
 			PreparedStatement pstmt = null;
@@ -164,6 +163,51 @@ public class MemberDAO {
 			}
 		}
 
+		
+		// 회원정보 수정 메서드
+				public void update(MemberDTO member) {
+
+					Connection conn = null;
+					PreparedStatement pstmt = null;
+				
+
+					try {
+					
+						String sql = "update member set  where id = ?;";
+						
+						conn = DBConnection.getConnection();
+						pstmt = conn.prepareStatement(sql);
+						
+						pstmt.setString(1, member.getId());
+						pstmt.setString(2, member.getPwd());
+						pstmt.setString(3, member.getName());
+						pstmt.setString(4, member.getGender());
+						
+						pstmt.setString(5, member.getEmail1());
+						pstmt.setString(6, member.getEmail2());
+						
+						pstmt.setString(7, member.getPhone());
+
+						pstmt.executeUpdate(); 
+
+					} catch (Exception e) {
+						e.printStackTrace();
+					} finally { // 자원 해제 반납
+						
+						if (pstmt != null)
+							try {
+								pstmt.close();
+							} catch (SQLException e) {
+								e.printStackTrace();
+							}
+						if (conn != null)
+							try {
+								conn.close();
+							} catch (SQLException e) {
+								e.printStackTrace();
+							}
+					}
+				}
 		
 	
 	
