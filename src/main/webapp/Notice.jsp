@@ -49,7 +49,7 @@
 				PreparedStatement pstmt = null;
 				ResultSet rs = null;
 
-				String sql = "select * from notice";
+				String sql = "select * from notice order by nid desc";
 				conn = DBConnection.getConnection();
 				pstmt = conn.prepareStatement(sql);
 

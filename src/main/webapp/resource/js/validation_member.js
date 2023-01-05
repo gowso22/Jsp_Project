@@ -2,6 +2,7 @@ function CheckAddMember() {
 	
 	var joinForm = document.addMember;
 	var id = joinForm.id.value;
+	var id2 = joinForm.id;
 	var pwd = joinForm.pwd.value;
 	var pwd_confirm = joinForm.pwd_confirm.value;
 	var name = joinForm.name.value;
@@ -17,8 +18,8 @@ function CheckAddMember() {
 		return false;
 	}
 	// 아이디 중복체크 안할 시
-	
-	if (document.addMember.id.readOnly == 'readOnly') {
+	/*$('input').attr('readonly') == 'readonly'*/
+	if ($('#idCheckTest').attr('readOnly') != 'readOnly') {
 		alert("[중복확인]\n 아이디 중복체크해주세요");
 		id.select();
 		id.focus();
