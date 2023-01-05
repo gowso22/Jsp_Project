@@ -16,6 +16,15 @@ function CheckAddMember() {
 		id.focus();
 		return false;
 	}
+	// 아이디 중복체크 안할 시
+	
+	if (document.addMember.id.readOnly == 'readOnly') {
+		alert("[중복확인]\n 아이디 중복체크해주세요");
+		id.select();
+		id.focus();
+		return false;
+	}
+	
 	// 비밀번호 체크
 	if (pwd.length == 0 || pwd == "") {
 		alert("[PASSWORD]\n 비밀번호를 입력해주세요");

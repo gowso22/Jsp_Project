@@ -22,7 +22,7 @@ public class MemberDAO {
 
 	
 	// 회원 중복 확인 메서드
-	public int idChecked(String id, String pwd) {
+	public int idChecked(String id) {
 
 		String sql = "select pwd from member where id = ?";
 
@@ -33,7 +33,7 @@ public class MemberDAO {
 		try {
 			conn = DBConnection.getConnection();
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, sql);
+			pstmt.setString(1, id);
 
 			rs = pstmt.executeQuery();
 

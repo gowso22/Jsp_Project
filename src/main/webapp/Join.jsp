@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="./resource/css/proj.css" />
 <link rel="stylesheet" href="./resource/css/bootstrap.min.css" />
 <script type="text/javascript" src="./resource/js/validation_member.js"></script>
+<script type="text/javascript" src="./resource/js/fn_IdCheck.js"></script>
 </head>
 <body>
 	<%@ include file="Header.jsp"%>
@@ -19,7 +20,7 @@
 			<form name = "addMember"class="form-signin" action="MemberJoinAction.do" method="post">
 				<div class="form-group  row">
 					<span>아이디 *
-						<button class="btn btn-success">ID중복</button>
+						<input type="button" class="btn btn-success" onclick="windowOpen()" value = "중복확인">
 					</span> <BR>
 					<BR> <input name="id" type="text" class="form-control"
 						placeholder="아이디">

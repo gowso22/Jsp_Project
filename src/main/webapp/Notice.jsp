@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="java.util.*"%>
+<%@ page import="java.sql.*"%>
+<%@ page import="util.DBConnection"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,50 +25,72 @@
 
 	<%@ include file="Header.jsp"%>
 
-	
+
 
 
 	<div class="index_sec">
-	
-	
-		<div><span>공지사항</span></div>
+
+
+		<div>
+			<span>공지사항</span>
+		</div>
 		<hr>
 		<div style="padding-top: 50px">
-				<table class="table table-hover">
-					<tr>
-						<th>글쓴이</th>
-						<th>제목</th>
-						<th>작성일</th>
-						
-						
-					</tr>
-					
-					<tr>
-						
-						<td>2</td>
-						<td>3</td>
-						
-						<td>5</td>
-					</tr>
-					<tr>
-						
-						<td>2</td>
-						<td>3</td>
-						
-						<td>5</td>
-					</tr>
-					<tr>
-						
-						<td>2</td>
-						<td>3</td>
-						
-						<td>5</td>
-					</tr>
-					
-				</table>
-			</div>
-	<button type="button" class="btn btn-secondary">글쓰기</button>
-		
+			<table class="table table-hover">
+				<tr>
+					<th>글쓴이</th>
+					<th>제목</th>
+					<th>작성일</th>
+
+
+				</tr>
+				<%
+				Connection conn = null;
+				PreparedStatement pstmt = null;
+				ResultSet rs = null;
+
+				String sql = "select * from notice";
+				conn = DBConnection.getConnection();
+				pstmt = conn.prepareStatement(sql);
+
+				rs = pstmt.executeQuery();
+
+				while (rs.next()) {
+				%>
+
+				<tr>
+					<td><%=rs.getInt("nid")%> / <%=rs.getString("userid")%></td>
+
+					<td><a href="N_content.jsp?nid=<%=rs.getInt("nid")%>"> <%=rs.getString("title")%>
+					</a></td>
+
+
+					<td><%=rs.getString("regDate")%></td>
+				</tr>
+	
+				<%
+				}
+
+				if (rs != null)
+				rs.close();
+				if (pstmt != null)
+				pstmt.close();
+				if (conn != null)
+				conn.close();
+				%>
+
+			</table>
+		</div>
+		<c:choose>
+			<c:when test="${sessionId.equals('admin')}">
+				<button type="button" class="btn btn-secondary"
+					onclick="location.href='N_write.jsp'">글쓰기</button>
+			</c:when>
+			<c:otherwise>
+
+			</c:otherwise>
+		</c:choose>
+
 
 	</div>
 

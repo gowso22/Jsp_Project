@@ -1,19 +1,20 @@
 package dto;
 
-public class BoardDTO {
+public class NoticeDTO {
 	
 	
-	private int bid;
+	private int nid;
 	private String title;
 	private String content;
 	private String userid;
 	private String regDate;
 	
-	public int getBid() {
-		return bid;
+
+	public int getNid() {
+		return nid;
 	}
-	public void setBid(int bid) {
-		this.bid = bid;
+	public void setNid(int nid) {
+		this.nid = nid;
 	}
 	public String getTitle() {
 		return title;
@@ -40,17 +41,18 @@ public class BoardDTO {
 		this.regDate = regDate;
 	}
 	
-	public BoardDTO() {
+	public NoticeDTO() {
 		
 	}
-	public BoardDTO(int bid, String title, String content, String userid, String regDate) {
+	public NoticeDTO(int nid, String title, String content, String userid, String regDate) {
 		super();
-		this.bid = bid;
+		this.nid = nid;
 		this.title = title;
 		this.content = content;
 		this.userid = userid;
 		this.regDate = regDate;
 	}
+	
 	
 	
 	

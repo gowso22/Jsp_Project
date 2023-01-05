@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="java.util.*"%>
+<%@ page import="java.sql.*"%>
+<%@ page import="util.DBConnection"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,71 +51,74 @@
 				</div>
 			</div>
 		</div>
-		<Br>
-		<br>
-		
-		<div><span>공지사항</span> <span> 더보기 >> </span></div>
+		<Br> <br>
+
+		<div>
+			<span>공지사항</span> <span><a class="nav-link" href="Notice.jsp"> 더보기 >> </a></span>
+		</div>
 		<hr>
-		
+
 		<div style="padding-top: 50px">
-				<table class="table table-hover">
-					<tr>
-						<th>글쓴이</th>
-						<th>제목</th>
-						<th>작성일</th>
-						
-						
-					</tr>
-					
-					<tr>
-						
-						<td>2</td>
-						<td>3</td>
-						
-						<td>5</td>
-					</tr>
-					<tr>
-						
-						<td>2</td>
-						<td>3</td>
-						
-						<td>5</td>
-					</tr>
-					<tr>
-						
-						<td>2</td>
-						<td>3</td>
-						
-						<td>5</td>
-					</tr>
-					
-				</table>
-			</div>
-		
+			<table class="table table-hover">
+				<tr>
+					<th>글쓴이</th>
+					<th>제목</th>
+					<th>작성일</th>
+				</tr>
+				<%
+				Connection conn = null;
+				PreparedStatement pstmt = null;
+				ResultSet rs = null;
+
+				String sql = "select * from notice order by nid desc limit 3";
+				conn = DBConnection.getConnection();
+				pstmt = conn.prepareStatement(sql);
+
+				rs = pstmt.executeQuery();
+
+				while (rs.next()) {
+				%>
+				<tr>
+					<td><%=rs.getString("userid")%></td>
+					<td><%=rs.getString("title")%></td>
+
+					<td><%=rs.getString("regDate")%></td>
+				</tr>
+				<%
+				}
+
+				if (rs != null)
+				rs.close();
+				if (pstmt != null)
+				pstmt.close();
+				if (conn != null)
+				conn.close();
+				%>
+
+			</table>
+		</div>
+
 		<br>
 
 		<div>센터소개</div>
 		<hr>
-		<img src="./resource/images/center_intro.png"> <br>
-		<br>
+		<img src="./resource/images/center_intro.png"> <br> <br>
 
 		<div>시설소개</div>
 		<hr>
-		<img src="./resource/images/esta_intro.png"> <br>
-		<br>
+		<img src="./resource/images/esta_intro.png"> <br> <br>
 
 		<div>프로그램 소개</div>
 		<hr>
-		<img src="./resource/images/program_intro.png">
-		
-		<br>
+		<img src="./resource/images/program_intro.png"> <br>
 
-		<div>바디 프로필</div>
+		<div>
+		<span>바디 프로필</span> <span><a class="nav-link" href="Notice.jsp"> 게시판 보기 >> </a></span></div>
 		<hr>
-	
+
 		<br>
 
-		
+
 
 	</div>
 
