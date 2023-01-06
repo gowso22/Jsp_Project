@@ -7,9 +7,6 @@ import java.sql.SQLException;
 import util.DBConnection;
 import java.util.ArrayList;
 
-import javax.security.auth.message.callback.PrivateKeyCallback.Request;
-
-import org.apache.tomcat.util.descriptor.web.ContextTransaction;
 
 import dto.NoticeDTO;
 

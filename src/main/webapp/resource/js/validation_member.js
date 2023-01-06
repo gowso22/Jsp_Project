@@ -19,7 +19,7 @@ function CheckAddMember() {
 	}
 	// 아이디 중복체크 안할 시
 	/*$('input').attr('readonly') == 'readonly'*/
-	if ($('#idCheckTest').attr('readOnly') != 'readOnly') {
+	if ($('#idCheckTest').attr('readonly') != 'readonly') {
 		alert("[중복확인]\n 아이디 중복체크해주세요");
 		id.select();
 		id.focus();
