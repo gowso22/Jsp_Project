@@ -34,7 +34,7 @@
 	<%@ include file="Header.jsp"%>
 
 	<div class="login_sec">
-		<h3 class="log_info">반갑습니다. AAAAAAA BBBBBB입니다.</h3>
+		<h3 class="log_info">반갑습니다. Fitness Ground 입니다.</h3>
 		<div class=log_form>
 			<form class="form-signin" action="processLogIn.jsp" method="post">
 				<div class="form-group">

@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+
 import dto.MemberDTO;
 import util.DBConnection;
 
@@ -206,6 +207,46 @@ public class MemberDAO {
 								e.printStackTrace();
 							}
 					}
+				}
+
+
+
+				public void deleteMember(MemberDTO member) {
+					
+					String sql = "delete from member where id = ?";
+
+					Connection conn = null;
+					PreparedStatement pstmt = null;
+					
+
+					try {
+						conn = DBConnection.getConnection();
+						pstmt = conn.prepareStatement(sql);
+						pstmt.setString(1, member.getId());
+						
+
+						pstmt.executeUpdate();
+						
+						
+						
+					} catch (Exception e) {
+						e.printStackTrace();
+					} finally { // 자원 해제 반납
+						
+						if (pstmt != null)
+							try {
+								pstmt.close();
+							} catch (SQLException e) {
+								e.printStackTrace();
+							}
+						if (conn != null)
+							try {
+								conn.close();
+							} catch (SQLException e) {
+								e.printStackTrace();
+							}
+					}
+					
 				}
 		
 	

@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.MemberDAO;
 import dto.MemberDTO;
@@ -37,8 +38,27 @@ public class MemberController extends HttpServlet {
 			requestUpdateMember(request);
 			RequestDispatcher rd = request.getRequestDispatcher("./Index.jsp");
 			rd.forward(request, response);
+		} else if (command.equals("/MemberDeleteAction.do")) {
+			requestDeleteMember(request);
+			RequestDispatcher rd = request.getRequestDispatcher("./logout.jsp?msg=1");
+			rd.forward(request, response);
 		}
+		
+		
+	}
+	// 회원탈퇴시
+	private void requestDeleteMember(HttpServletRequest request) {
+		
 
+		MemberDAO dao = MemberDAO.getInstance();
+		MemberDTO member = new MemberDTO();
+
+		member.setId(request.getParameter("id"));
+		member.setPwd(request.getParameter("pwd"));
+		
+		dao.deleteMember(member);
+		
+		
 	}
 
 	// 회원정보 수정시

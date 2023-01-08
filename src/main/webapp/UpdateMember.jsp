@@ -89,9 +89,11 @@
 				
 				<div class="form-group  row">
 					<div class="col-sm-offset-2 col-sm-10 ">
-						<input type="button" class="btn btn-primary " value="수정 " onclick="CheckAddMember()">
+						<input type="submit" class="btn btn-primary " value="수정 ">
 						<input type="reset" class="btn btn-primary " value="취소 "
 							onclick="reset()">
+						<input type="button" class="btn btn-danger " value="회원탈퇴 "
+							onclick="location.href='MemberDeleteAction.do?id=<%=rs.getString("id")%>'">
 					</div>
 				</div>
 			</form>

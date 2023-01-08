@@ -5,7 +5,7 @@
 <head>
 <link rel="stylesheet" href="./resource/css/proj.css" />
 <link rel="stylesheet" href="./resource/css/bootstrap.min.css" />
- <script type="text/javascript" src="./resource/js/validation_member.js"></script>
+<script type="text/javascript" src="./resource/js/validation_member.js"></script>
 <script type="text/javascript" src="./resource/js/fn_IdCheck.js"></script>
 <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
