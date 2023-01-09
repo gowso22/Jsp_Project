@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
-	// 로그인 후 세션으로 등록된 아이디를 가져오는 알고리즘. 
+	// 로그인 후 세션으로 등록된 아이디를 가져옴
 	String sessionId = (String) session.getAttribute("sessionId");
 %>
 <!DOCTYPE html>

@@ -71,7 +71,7 @@ if (result == 1){
     	opener.document.addMember.id.value = document.wfr.userid.value;
     	
     	//6-3. 회원가입창 제어
-    	//readonly 속성제어(커멜표기가 아닐때는 제어가 안됨 신기하네 ㅋㅋㅋ)
+    
     	opener.document.addMember.id.readOnly=true;
     	
     	//6-2. 창닫기
